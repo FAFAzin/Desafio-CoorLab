@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <BestTransport/>
+    <BestTransport />
   </div>
 </template>
 
@@ -15,5 +15,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
