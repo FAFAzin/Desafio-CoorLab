@@ -1,4 +1,4 @@
-export default function encontrarEmpresaMaisBarataERapida(resultados, destino, peso) {
+export function encontrarEmpresaMaisBarataERapida(resultados, destino, peso) {
     let cidadeMaisPerto = [];
     let arrCustos = [];
     let arrPrazos = [];
@@ -7,15 +7,12 @@ export default function encontrarEmpresaMaisBarataERapida(resultados, destino, p
     let empresaMaisBarata = {};
     let empresaMaisRapida = {};
 
-    if (destino === "") {
-        return { err: true, erro: 'Preencha todos os campos corretamente' };
-    }
-
+    /* Verifica as empresas disponíveis na cidade destino */
     resultados.forEach((resultado) => {
         const cidade = resultado.city
         cidade == destino ? cidadeMaisPerto.push(resultado) : ""
     })
-
+    /* Retorna a Empresa com a entrega mais rápida e a empresa com a entrega mais econômica */
     cidadeMaisPerto.forEach((cidade) => {
         const nomeTransportadora = cidade.name;
         const prazo = parseInt(cidade.lead_time.replace("h", ""));
@@ -36,3 +33,7 @@ export default function encontrarEmpresaMaisBarataERapida(resultados, destino, p
 
     return { empresaMaisBarata, empresaMaisRapida };
 }
+
+
+/* =========== verificar entradas =============== */
+/* ? */
